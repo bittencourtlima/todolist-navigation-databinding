@@ -1,9 +1,7 @@
 package bittencourt.poc.todolist
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 
 class AddTaskFragment : Fragment() {
@@ -15,10 +13,9 @@ class AddTaskFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_add_task, container, false)
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            AddTaskFragment().apply {
-            }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
+
 }
